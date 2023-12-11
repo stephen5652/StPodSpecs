@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   #  spec.source_files = 'BDSASR_lib/ASR_iOS_v33.0.11.0.84e4d91_20230523143352/{Public,Private}/**/*.{h,m,mm,c,cpp,swift}'
   # spec.exclude_files = "BDSASR/Exclude" #排除文件
   
-  #  spec.project_header_files = 'BDSASR/Private/**/*.{h}'
+  spec.project_header_files = 'BDSASR_lib/Private/**/*.{h}'
   spec.public_header_files = 'BDSASR_lib/**/*.h' #此处放置组件的对外暴漏的头文件
   
   # ――― binary framework/lib ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
