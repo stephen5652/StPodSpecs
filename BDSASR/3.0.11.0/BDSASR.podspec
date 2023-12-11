@@ -14,10 +14,10 @@ Pod::Spec.new do |spec|
   spec.source = { :git => "https://github.com/stephen5652/STBDSASR.git", :tag => spec.version.to_s }
   
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #  spec.source_files = 'BDSASR_lib/ASR_iOS_v33.0.11.0.84e4d91_20230523143352/{Public,Private}/**/*.{h,m,mm,c,cpp,swift}'
-  # spec.exclude_files = "BDSASR/Exclude" #排除文件
+   spec.source_files = 'BDSASR_lib/**/*.{h,m,mm,c,cpp,swift}'
+  spec.exclude_files = "BDSASR_lib/**/**/BDSClientSample/**/*" #排除文件
   
-  spec.project_header_files = 'BDSASR_lib/Private/**/*.{h}'
+#   spec.project_header_files = 'BDSASR_lib/Private/**/*.{h}'
   spec.public_header_files = 'BDSASR_lib/**/*.h' #此处放置组件的对外暴漏的头文件
   
   # ――― binary framework/lib ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -62,6 +62,7 @@ Pod::Spec.new do |spec|
   mkdir BDSASR_lib
   cat part.tar.gz* > BDSASR.tar.gz;
   tar -xzvf BDSASR.tar.gz -C  BDSASR_lib/
+  rm -rf
 
   CMD
 end
