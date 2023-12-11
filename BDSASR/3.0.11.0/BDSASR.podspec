@@ -45,7 +45,6 @@ Pod::Spec.new do |spec|
   
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   
-  
   # 其他依赖pod
   # spec.dependency "XXXXXXXX"
   
@@ -59,8 +58,10 @@ Pod::Spec.new do |spec|
   #     end
   
   spec.prepare_command  =  <<-CMD
-  tr -d '\r' < ./shell/install_pod.sh > ./shell/install_pod_fixed.sh
-  chmod +x ./shell/install_pod_fixed.sh
-  ./shell/install_pod_fixed.sh
+  rm -rf BDSASR_lib
+  mkdir BDSASR_lib
+  cat part.tar.gz* > BDSASR.tar.gz;
+  tar -xzvf BDSASR.tar.gz -C  BDSASR_lib/
+
   CMD
 end
